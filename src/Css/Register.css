@@ -1,0 +1,107 @@
+/* Register.css */
+
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container for the form */
+  div {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    padding-top: 5px;
+    background-color: #fff;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;
+  }
+  
+  /* Header styling */
+  h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input,
+  textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"] {
+    width: 100%;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100px;
+    resize: vertical;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 12px;
+    margin: auto;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Placeholder text */
+  input::placeholder,
+  textarea::placeholder {
+    color: #888;
+  }
+  
+  textarea::placeholder {
+    font-size: 1rem;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  @media (max-width: 600px) {
+    div {
+      max-width: 100%;
+      padding: 20px;
+    }
+  
+    input, textarea, button {
+      font-size: 16px;
+    }
+  }
