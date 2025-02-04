@@ -7,7 +7,7 @@ const Register = () => {
   const [panNumber, setPanNumber] = useState(null);
 //   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  let handleSubmit = (e) => {
     e.preventDefault();
     //email validation
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -37,10 +37,10 @@ const Register = () => {
   }
 
   // Check if the user is above 18 years old
-  const today = new Date();
-  const birthDate = new Date(dob);
-  const age = today.getFullYear() - birthDate.getFullYear();
-  const m = today.getMonth() - birthDate.getMonth();
+  let today = new Date();
+  let birthDate = new Date(dob);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  let m = today.getMonth() - birthDate.getMonth();
   if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
     age--; // Adjust age if the birthday hasn't occurred yet this year
   }
@@ -61,10 +61,11 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="body">
         {!panNumber && <h2>PAN Registration</h2>}
       
       {!panNumber ? (
+        <div className="form">
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Full Name" onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} required />
           <input type="date" placeholder="DOB" onChange={(e) => setFormData({ ...formData, dob: e.target.value })} required />
@@ -72,9 +73,9 @@ const Register = () => {
           <input type="tel" placeholder="Phone" onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required />
           <textarea placeholder="Address" onChange={(e) => setFormData({ ...formData, address: e.target.value })} required></textarea>
           <button type="submit">Register</button>
-        </form>
+        </form></div>
       ) : (
-        <div>
+        <div >
           <h3>Your PAN: {panNumber}</h3>
           {/* <button onClick={() => navigate("/fetch")}>Fetch Details</button> */}
         </div>
