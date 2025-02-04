@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import "../Css/Fetch.css";
 const FetchPan = () => {
   const [pan, setPan] = useState("");
   const [userData, setUserData] = useState(null);
@@ -17,13 +18,13 @@ const FetchPan = () => {
   };
 
   return (
-    <div>
+    <div className="fetch-container"> 
       <h2>Fetch PAN Details</h2>
       <input type="text" placeholder="Enter PAN Number" onChange={(e) => setPan(e.target.value)} />
       <button onClick={fetchDetails}>Fetch</button>
       {error && <p>{error}</p>}
       {userData && (
-        <div>
+        <div className="user-data">
           <h3>Name: {userData.fullName}</h3>
           <p>DOB: {userData.dob}</p>
           <p>Email: {userData.email}</p>
