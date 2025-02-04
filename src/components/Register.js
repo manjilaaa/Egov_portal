@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../Css/Register.css";
 
 const Register = () => {
   const [formData, setFormData] = useState({ fullName: "", dob: "", email: "", phone: "", address: "" });
   const [panNumber, setPanNumber] = useState(null);
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,17 +66,17 @@ const Register = () => {
       
       {!panNumber ? (
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Full Name" onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} required />
-          <input type="date" placeholder="DOB" onChange={(e) => setFormData({ ...formData, dob: e.target.value })} required />
-          <input type="email" placeholder="Email" onChange={(e) => setFormData({ ...formData, email: e.target.value })} required />
-          <input type="tel" placeholder="Phone" onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required />
+          <input type="text" placeholder="Full Name" onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}  />
+          <input type="date" placeholder="DOB" onChange={(e) => setFormData({ ...formData, dob: e.target.value })}  />
+          <input type="email" placeholder="Email" onChange={(e) => setFormData({ ...formData, email: e.target.value })}  />
+          <input type="tel" placeholder="Phone" onChange={(e) => setFormData({ ...formData, phone: e.target.value })}  />
           <textarea placeholder="Address" onChange={(e) => setFormData({ ...formData, address: e.target.value })} required></textarea>
           <button type="submit">Register</button>
         </form>
       ) : (
         <div>
           <h3>Your PAN: {panNumber}</h3>
-          {/* <button onClick={() => navigate("/fetch")}>Fetch Details</button> */}
+          <button onClick={() => navigate("/fetch")}>Fetch Details</button>
         </div>
       )}
     </div>
