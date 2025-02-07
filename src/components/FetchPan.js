@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import "../Css/Fetch.css";
+import HomePage from "./HomePage/HomePage";
 const FetchPan = () => {
   const [pan, setPan] = useState("");
   const [userData, setUserData] = useState(null);
@@ -18,10 +19,12 @@ const FetchPan = () => {
   };
 
   return (
+    
     <div className="fetch-container"> 
+
       <h2>Fetch PAN Details</h2>
       <input type="text" placeholder="Enter PAN Number" onChange={(e) => setPan(e.target.value)} />
-      <button onClick={fetchDetails}>Fetch</button>
+      <button onClick={fetchDetails} >Fetch</button>
       {error && <p>{error}</p>}
       {userData && (
         <div className="user-data">

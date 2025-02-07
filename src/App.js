@@ -4,16 +4,24 @@ import Register from './components/Register';
 import NavBar from './NavBar/NavBar';
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import FetchPan from './components/FetchPan';
+import HomePage from './components/HomePage/HomePage';
+
+
 
 function App() {
   return (
     <Router>
+
       <NavBar/>
       <Routes>
-        <Route path='/' element={<Register/>} />
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/Register' element={<Register/>} />
         <Route path='/fetch' element={<FetchPan/>}></Route>
       </Routes>
+      
+      
     </Router>
+  
     
   );
 }

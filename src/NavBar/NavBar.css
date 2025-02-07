@@ -4,8 +4,11 @@
 .navbar{
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(to right, #89e383, #b0e16c); 
-
+    background: linear-gradient(to right, #e9beac, #a8cef5); 
+    z-index: 1000;
+    /* position:fixed; */
+    
+    
 }
 .logo img{
     display: flex;
@@ -30,16 +33,27 @@ ul{
     transition: transform 1s ease ease-in-out;
     cursor: pointer;
     padding-left: -20px;
-    
+    background: rgb(229, 158, 158);
+    height: 40px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: 2px solid blue;
 }
 hr{
     height:3px; 
-    background: rgb(79, 56, 182); 
+    background: rgb(198, 41, 41); 
     width:100px;
-    /* transition: transform 2s ease-in-out; */
+    transition: transform 2s ease-in-out;
 }
 .right ul li:hover{
     transform: scale(1.1);
+}
+link{
+    text-decoration: none;
 }
 
 
