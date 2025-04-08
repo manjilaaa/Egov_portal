@@ -59,7 +59,30 @@ const Register = () => {
     
    
   };
-
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById('registrationForm');
+    const footer = document.getElementById('footer');
+  
+    if (form && footer) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            form.style.opacity = '0';
+            form.style.pointerEvents = 'none'; // disable interactions when hidden
+          } else {
+            form.style.opacity = '1';
+            form.style.pointerEvents = 'auto';
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+  
+      observer.observe(footer);
+    }
+  });
+  
+  
   return (
     <div className="body">
       {!panNumber && (
