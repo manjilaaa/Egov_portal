@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // Import useLocation
 import image from '../Assets/navImage.png';
 import './NavBar.css';
 
 const NavBar = () => {
-  const [menu, setMenu] = useState("HomePage");
   const [isMenuOpen, setIsMenuOpen] = useState(false); // state to toggle menu visibility
+  const location = useLocation(); // Get the current location
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen); // Toggle the menu visibility
@@ -19,14 +19,29 @@ const NavBar = () => {
 
       <div className={`right ${isMenuOpen ? 'active' : ''}`}>
         <ul>
-          <li onClick={() => { setMenu("HomePage"); setIsMenuOpen(false); }}>
-            <Link to="/" className={`nav-link ${menu === "HomePage" ? "active" : ""}`}>Homepage</Link>
+          <li onClick={() => setIsMenuOpen(false)}>
+            <Link 
+              to="/" 
+              className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+            >
+              Homepage
+            </Link>
           </li>
-          <li onClick={() => { setMenu("Registration"); setIsMenuOpen(false); }}>
-            <Link to="/Register" className={`nav-link ${menu === "Registration" ? "active" : ""}`}>Registration</Link>
+          <li onClick={() => setIsMenuOpen(false)}>
+            <Link 
+              to="/Register" 
+              className={`nav-link ${location.pathname === "/Register" ? "active" : ""}`}
+            >
+              Registration
+            </Link>
           </li>
-          <li onClick={() => { setMenu("Fetch"); setIsMenuOpen(false); }}>
-            <Link to="/fetch" className={`nav-link ${menu === "Fetch" ? "active" : ""}`}>Fetch</Link>
+          <li onClick={() => setIsMenuOpen(false)}>
+            <Link 
+              to="/fetch" 
+              className={`nav-link ${location.pathname === "/fetch" ? "active" : ""}`}
+            >
+              Fetch
+            </Link>
           </li>
         </ul>
       </div>

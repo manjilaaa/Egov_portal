@@ -50,12 +50,13 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 80px;
   
 }
 
 .team-member {
-  width: 30%;
-  text-align: left;
+  width: 25%;
+  text-align: center;
 }
 
 .footer-bottom {
@@ -72,8 +73,30 @@ h3, h4 {
 a {
   color:  #003893;
   text-decoration: none;
+  margin: 0;
 }
 
 a:hover {
   text-decoration: underline;
+}
+.favicon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 0;
+
+ 
+}
+.social-icon {
+ display: flex;
+ align-items: center;
+ gap: 0px;
+ margin: 0;
+ padding: 0;
+ margin-right: -9px;
+   /* Adds space between icons */ 
+}
+.social-icon a{
+  margin-right: 0;
+ 
 }
